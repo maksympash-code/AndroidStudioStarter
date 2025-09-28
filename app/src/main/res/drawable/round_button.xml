@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#2E7D32"/> <!-- колір кнопки -->
+    <size android:width="75dp" android:height="75dp"/> <!-- робить коло -->
+</shape>
+

@@ -7,22 +7,317 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_student"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/button_hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="406dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textSize="62sp"
+            android:layout_gravity="end"
+            android:padding="@dimen/paddingTextView"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/c"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/del"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/persent"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/unmul"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_7"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_8"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_9"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/mul"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_4"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_5"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_6"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/dis"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_1"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_2"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_3"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/plus"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/revers"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/_0btn"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/dot"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <Button
+                    android:id="@+id/button20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:text="@string/eq"
+                    android:textColor="@android:color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/marginButtons"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
