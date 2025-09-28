@@ -23,4 +23,6 @@
     <string name="_0btn">0</string>
     <string name="dot">.</string>
     <string name="eq">=</string>
+    <string name="enter_number">Enter number</string>
+    <string name="result">Result</string>
 </resources>
