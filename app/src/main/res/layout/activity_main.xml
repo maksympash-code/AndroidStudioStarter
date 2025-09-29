@@ -26,34 +26,24 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etTop"
+                android:id="@+id/etInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="@string/enter_number"
-                android:focusable="false"
+                android:layout_height="59dp"
+                android:layout_marginTop="15dp"
                 android:cursorVisible="false"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/etBottom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/enter_number"
                 android:focusable="false"
-                android:cursorVisible="false"
+                android:hint="@string/enter_number"
                 android:inputType="none" />
 
             <TextView
                 android:id="@+id/tvResult"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="162dp"
-                android:layout_marginTop="28dp"
                 android:text="@string/result"
-                android:textSize="24sp" />
+                android:textSize="28sp"
+                android:gravity="center"
+                android:layout_marginTop="16dp"/>
         </LinearLayout>
 
 

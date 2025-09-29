@@ -8,8 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var etTop: EditText
-    private lateinit var etBottom: EditText
+    private lateinit var etInput: EditText
     private lateinit var tvResult: TextView
     private lateinit var btnC: Button
     private lateinit var btnDel: Button
@@ -32,12 +31,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnDot: Button
     private lateinit var btnEq: Button
 
+    private var firstOperand: Double? = null
+    private var operator: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etTop = findViewById(R.id.etTop)
-        etBottom = findViewById(R.id.etBottom)
+        etInput = findViewById(R.id.etInput)
         tvResult = findViewById(R.id.tvResult)
         btnC = findViewById(R.id.btnC)
         btnDel = findViewById(R.id.btnDel)
@@ -88,47 +89,43 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7,
             R.id.btn8, R.id.btn9, R.id.btnDot -> {
                 val b = v as Button
-                etBottom.append(b.text)
+                etInput.append(b.text)
             }
 
-            R.id.btnC -> {
-                etTop.text.clear()
-                etBottom.text.clear()
-                tvResult.text = "Result"
-            }
-
-            R.id.btnDel -> {
-                val str = etBottom.text.toString()
-                if (str.isNotEmpty()){
-                    etBottom.setText(str.substring(0, str.length - 1))
-                }
-            }
-
-            R.id.btnPlus, R.id.btnUnmul, R.id.btnMinus,
-            R.id.btnMul, R.id.btnPersent ->{
-                etTop.setText(etBottom.text.toString())
-                etBottom.text.clear()
-                tvResult.text = (v as Button).text
+            R.id.btnPlus, R.id.btnMinus, R.id.btnMul,
+            R.id.btnUnmul, R.id.btnPersent -> {
+                firstOperand = etInput.text.toString().toDoubleOrNull()
+                operator = (v as Button).text.toString()
+                etInput.text.clear()
             }
 
             R.id.btnEq -> {
-                val top = etTop.text.toString().toDoubleOrNull() ?: 0.0
-                val bottom = etBottom.text.toString().toDoubleOrNull() ?: 0.0
+                val secondOperand = etInput.text.toString().toDoubleOrNull()
+                val res = if (firstOperand != null && secondOperand != null && operator != null) {
+                    when(operator){
+                        "+" -> firstOperand!! + secondOperand
+                        "-" -> firstOperand!! - secondOperand
+                        "x" -> firstOperand!! * secondOperand
+                        "÷" -> if (secondOperand == 0.0) Double.NaN else firstOperand!! / secondOperand
+                        "%" -> firstOperand!! % secondOperand
+                        else -> 0.0
+                    }
+                } else 0.0
 
-                val op = tvResult.text.toString()
+                tvResult.setText("$firstOperand ${operator} $secondOperand = ${res}")
+                etInput.text.clear()
 
-                val res = when (op){
-                    "+" -> top + bottom
-                    "-" -> top - bottom
-                    "x" -> top * bottom
-                    "÷" -> if (bottom != 0.0) top / bottom else Double.NaN
-                    "%" -> top % bottom
-                    else -> 0.0
-                }
-                tvResult.text = res.toString()
+                firstOperand = res
+                etInput.setText(res.toString())
+            }
+
+            R.id.btnC -> {
+                etInput.text.clear()
+                tvResult.text = "Result"
+                firstOperand = null
+                operator = null
             }
         }
 
-    }
-
+}
 }
